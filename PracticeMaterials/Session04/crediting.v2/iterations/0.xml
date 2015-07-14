@@ -1,0 +1,114 @@
+<states>
+<itno>0</itno>
+<environment>
+    <debt_threshold>0.5</debt_threshold>
+</environment>
+<xagent>
+    <name>bank</name>
+    <id>1</id>
+    <loans>0</loans>
+    <liquidity>1610</liquidity>
+    <deposits>1610</deposits>
+    <id_list>{}</id_list>
+    <customer_list>{}</customer_list>
+</xagent>
+<xagent>
+    <name>bank</name>
+    <id>2</id>
+    <loans>0</loans>
+    <liquidity>12400</liquidity>
+    <deposits>12400</deposits>
+    <id_list>{}</id_list>
+    <customer_list>{}</customer_list>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>3</id>
+    <bank_id>1</bank_id>
+    <assets>1000</assets>
+    <debts>100</debts>
+    <equity>900</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>4</id>
+    <bank_id>1</bank_id>
+    <assets>10</assets>
+    <debts>0</debts>
+    <equity>10</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>5</id>
+    <bank_id>1</bank_id>
+    <assets>500</assets>
+    <debts>500</debts>
+    <equity>0</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>6</id>
+    <bank_id>1</bank_id>
+    <assets>100</assets>
+    <debts>500</debts>
+    <equity>-400</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>7</id>
+    <bank_id>2</bank_id>
+    <assets>10000</assets>
+    <debts>0</debts>
+    <equity>10000</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>8</id>
+    <bank_id>2</bank_id>
+    <assets>100</assets>
+    <debts>1100</debts>
+    <equity>-1000</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>9</id>
+    <bank_id>2</bank_id>
+    <assets>100</assets>
+    <debts>1100</debts>
+    <equity>-1000</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>10</id>
+    <bank_id>2</bank_id>
+    <assets>100</assets>
+    <debts>0</debts>
+    <equity>100</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>11</id>
+    <bank_id>2</bank_id>
+    <assets>500</assets>
+    <debts>500</debts>
+    <equity>0</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+<xagent>
+    <name>firm</name>
+    <id>12</id>
+    <bank_id>2</bank_id>
+    <assets>1500</assets>
+    <debts>500</debts>
+    <equity>1000</equity>
+    <liquidity_need>0</liquidity_need>
+</xagent>
+</states>

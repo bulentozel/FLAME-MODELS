@@ -1,0 +1,97 @@
+<xmodel version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation='http://flame.ac.uk/schema/xmml_v2.xsd'>
+
+<!-- Model descriptions  -->    
+<name>model 02</name>
+<version>1</version>
+<description>An example model of sending and receiving a message between two agents</description>
+
+<environment>
+    <functionFiles> <!-- List of C files that hold agent functions -->
+        <file>agent_a_functions.c</file>
+        <file>agent_b_functions.c</file>
+    </functionFiles>
+</environment>
+
+<!-- List of agents -->
+<agents>
+
+    <xagent>
+        <name>agent_a</name>
+        <description>Agent sending a message</description>
+        <!-- Agent memory holding a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>my_id</name>
+                <description>An integer variable</description>
+            </variable>
+        </memory>
+        <!-- List of agent functions -->
+        <functions>          				
+            <function>
+                <name>send_message</name>
+                <description>Sending a message</description>
+                <currentState>start</currentState>
+                <nextState>end</nextState>
+                <outputs> <!-- List of possible outputs -->
+                	<output>
+                		<messageName>message_z</messageName>
+                	</output>
+                </outputs>			
+            </function>
+        </functions>
+    </xagent>
+
+    <xagent>
+        <name>agent_b</name>
+        <description>Agent receving messages</description>
+        <!-- Agent memory holding a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>my_id</name>
+                <description>An integer variable</description>
+            </variable>
+            <variable>
+                <type>int</type>
+                <name>sum_of_ids</name>
+                <description>The sum of ids received from messages</description>
+            </variable>
+        </memory>
+        <!-- List of agent functions -->
+        <functions>          				
+            <function>
+                <name>receive_messages</name>
+                <description>Receive messages</description>
+                <currentState>start</currentState>
+                <nextState>end</nextState>
+                <inputs> <!-- List of possible inputs -->
+                	<input>
+                		<messageName>message_z</messageName>
+                	</input>
+                </inputs>			
+            </function>
+        </functions>
+    </xagent>
+
+</agents>
+
+<!-- List of messages -->
+<messages>
+
+    <message>
+        <name>message_z</name>
+        <description>A message holding an id</description>
+        <variables> <!-- List of message variables -->
+            <variable>
+            	<type>int</type>
+            	<name>an_id</name>
+            	<description>An id</description>
+            </variable>
+        </variables>
+    </message>
+    
+</messages>
+
+</xmodel>

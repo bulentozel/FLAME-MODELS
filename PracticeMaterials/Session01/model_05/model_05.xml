@@ -1,0 +1,108 @@
+<xmodel version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://flame.ac.uk/schema/xmml_v2.xsd">
+
+<!-- Model descriptions  -->    
+<name>model 05</name>
+<version>1</version>
+<description>Agent with message input filter and sort</description>
+
+<environment>
+    <functionFiles> <!-- List of C files that hold agent functions -->
+        <file>agent_a_functions.c</file>
+    </functionFiles>
+</environment>
+
+<!-- List of agents -->
+<agents>
+
+    <xagent>
+        <name>agent_a</name>
+        <description>An agent that filters and sorts its input</description>
+        <!-- Agent memory holding a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>id</name>
+                <constant>true</constant>
+                <description></description>
+            </variable>
+        </memory>
+        <!-- List of agent functions -->
+        <functions>          				
+            <function>
+                <name>output</name>
+                <description>Output messages</description>
+                <currentState>start</currentState>
+                <nextState>01</nextState>
+                <outputs> <!-- List of possible outputs -->
+                	<output>
+                		<messageName>m</messageName>
+                	</output>
+                </outputs>			
+            </function>
+            <function>
+                <name>input_random</name>
+                <description>Receive messages in random order</description>
+                <currentState>01</currentState>
+                <nextState>02</nextState>
+                <inputs> <!-- List of possible inputs -->
+                	<input>
+                		<messageName>m</messageName>
+                		<!-- Input messages can be randomised -->
+                		<random>true</random>
+                	</input>
+                </inputs>		
+            </function>
+            <function>
+                <name>input_filtered_sorted</name>
+                <description>Receive messages filtered and sorted</description>
+                <currentState>02</currentState>
+                <nextState>end</nextState>
+                <inputs> <!-- List of possible inputs -->
+                	<input>
+                		<messageName>m</messageName>
+                		<!-- Input messages can be filtered -->
+                		<filter>
+                			<lhs>
+                				<value>a.id</value>
+                			</lhs>
+                			<op>EQ</op>
+                			<rhs>
+                				<value>m.id</value>
+                			</rhs>
+                		</filter>
+                		<!-- Input messages can be sorted -->
+                		<sort>
+                			<key>r</key>
+                			<order>ascend</order>
+                		</sort>
+                	</input>
+                </inputs>		
+            </function>
+        </functions>
+    </xagent>
+</agents>
+
+<!-- List of messages -->
+<messages>
+
+    <message>
+        <name>m</name>
+        <description>Message containing an id and a random integer</description>
+        <variables> <!-- List of message variables -->
+            <variable>
+            	<type>int</type>
+            	<name>id</name>
+            	<description>An id</description>
+            </variable>
+            <variable>
+            	<type>int</type>
+            	<name>r</name>
+            	<description>A random number</description>
+            </variable>
+        </variables>
+    </message>
+    
+</messages>
+
+</xmodel>

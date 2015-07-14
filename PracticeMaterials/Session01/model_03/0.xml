@@ -1,0 +1,18 @@
+<states>
+<itno>0</itno>
+<environment>
+    <env_int>2</env_int>
+</environment>
+<agents>
+    <xagent>
+        <name>agent_a</name>
+        <my_line>{{1.100000, 2.200000, 3.300000}, {4.400000, 5.500000, 6.600000}}</my_line>
+        <my_id>1</my_id>
+    </xagent>
+    <xagent>
+        <name>agent_a</name>
+        <my_line>{{0.100000, 0.200000, 0.300000}, {6.400000, 7.500000, 8.600000}}</my_line>
+        <my_id>2</my_id>
+    </xagent>
+</agents>
+</states>

@@ -1,0 +1,121 @@
+<xmodel version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation='http://flame.ac.uk/schema/xmml_v2.xsd'>
+
+	<!-- Model descriptions  -->
+	<name>model 04</name>
+	<version>1</version>
+	<description>Model with time units and agent function conditions</description>
+
+	<environment>
+		<functionFiles>
+			<!-- List of C files that hold agent functions -->
+			<file>agent_a_functions.c</file>
+		</functionFiles>
+		<timeUnits>
+			<!-- List of time units -->
+			<timeUnit>
+				<name>daily</name>
+				<unit>iteration</unit>
+				<period>1</period>
+			</timeUnit>
+
+			<timeUnit>
+				<name>weekly</name>
+				<unit>daily</unit>
+				<period>5</period>
+			</timeUnit>
+
+			<timeUnit>
+				<name>monthly</name>
+				<unit>weekly</unit>
+				<period>4</period>
+			</timeUnit>
+		</timeUnits>
+	</environment>
+
+	<!-- List of agents -->
+	<agents>
+
+		<xagent>
+			<name>agent_a</name>
+			<description>Agent with time unit dependent functions</description>
+			<!-- Agent memory holding a list of variables -->
+			<memory>
+				<variable>
+					<type>int</type>
+					<name>no_of_acts</name>
+					<description>The number of acts</description>
+				</variable>
+				<variable>
+					<type>int</type>
+					<name>day_of_week_to_act</name>
+					<description>The day of the week to act</description>
+				</variable>
+			</memory>
+			<!-- List of agent functions -->
+			<functions>
+				<function>
+					<name>reset_acts</name>
+					<description>Reset to zero the number of acts</description>
+					<currentState>start</currentState>
+					<nextState>01</nextState>
+					<!-- This condition must be met for the function to be executed. -->
+					<condition>
+						<lhs>
+							<value>a.no_of_acts</value>
+						</lhs>
+						<op>EQ</op>
+						<rhs>
+							<value>4</value>
+						</rhs>
+					</condition>
+				</function>
+				<function>
+					<name>idle</name>
+					<description>Idle</description>
+					<currentState>start</currentState>
+					<nextState>01</nextState>
+					<!-- This condition must be met for the function to be executed. -->
+					<condition>
+						<lhs>
+							<value>a.no_of_acts</value>
+						</lhs>
+						<op>NEQ</op>
+						<rhs>
+							<value>4</value>
+						</rhs>
+					</condition>
+				</function>
+				<function>
+					<name>increment_act</name>
+					<description>Increment act counter</description>
+					<currentState>01</currentState>
+					<nextState>end</nextState>
+					<!-- This condition must be met for the function to be executed. -->
+					<condition>
+						<time>
+	                	<period>weekly</period>
+	                	<phase>a.day_of_week_to_act</phase>                	
+	                	</time>
+					</condition>
+				</function>
+				<function>
+					<name>idle</name>
+					<description>Idle</description>
+					<currentState>01</currentState>
+					<nextState>end</nextState>
+					<!-- This condition must be met for the function to be executed. -->
+					<condition>
+						<not>
+						<time>
+	                	<period>weekly</period>
+	                	<phase>a.day_of_week_to_act</phase>                	
+	                	</time>
+	                	</not>
+					</condition>
+				</function>
+			</functions>
+		</xagent>
+
+	</agents>
+</xmodel>

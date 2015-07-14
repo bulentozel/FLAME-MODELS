@@ -1,0 +1,9 @@
+<states>
+<itno>0</itno>
+<agents>
+	<xagent>
+		<name>agent_a</name>
+		<my_id>2</my_id>
+	</xagent>
+</agents>
+</states>

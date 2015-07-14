@@ -1,0 +1,31 @@
+<states>
+<itno>0</itno>
+<xagent>
+    <name>producer</name>
+    <id>1</id>
+</xagent>
+<xagent>
+    <name>producer</name>
+    <id>2</id>
+</xagent>
+<xagent>
+    <name>consumer</name>
+    <id>3</id>
+</xagent>
+<xagent>
+    <name>consumer</name>
+    <id>4</id>
+</xagent>
+<xagent>
+    <name>consumer</name>
+    <id>5</id>
+</xagent>
+<xagent>
+    <name>consumer</name>
+    <id>6</id>
+</xagent>
+<xagent>
+    <name>consumer</name>
+    <id>7</id>
+</xagent>
+</states>

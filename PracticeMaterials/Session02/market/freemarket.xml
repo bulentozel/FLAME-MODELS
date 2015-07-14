@@ -1,0 +1,70 @@
+<xmodel version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://flame.ac.uk/schema/xmml_v2.xsd">
+
+<!-- Model descriptions  -->    
+<name>Free Market</name>
+<version>1</version>
+<description>A simple market place.</description>
+
+<environment>
+    <functionFiles> <!-- List of C files that hold agent functions -->
+        <file>producer_functions.c</file>
+        <file>consumer_functions.c</file>
+    </functionFiles>
+</environment>
+
+<!-- List of agents -->
+<agents>
+
+    <xagent>
+        <name>producer</name>
+        <description>Agent of type a</description>
+        <!-- Agent memory holding a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>id</name>
+                <description>Identification</description>
+            </variable>
+        </memory>
+        <!-- List of agent functions -->
+        <functions>          				
+            <function>
+                <name>producer_produce_goods</name>
+                <description>The producer does the production.</description>
+                <currentState>start</currentState>
+                <nextState>ProducerMarket</nextState>
+            </function>
+            <function>
+                <name>producer_go_to_market_to_sell</name>
+                <description>A simple seller.</description>
+                <currentState>ProducerMarket</currentState>
+                <nextState>end</nextState>
+            </function>
+        </functions>
+    </xagent>
+
+    <xagent>
+        <name>consumer</name>
+        <description>A simple buyer.</description>
+        <!-- Agent memory holding a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>id</name>
+                <description>Identification</description>
+            </variable>
+        </memory>
+        <!-- List of agent functions -->
+        <functions>
+            <function>
+                <name>consumer_go_to_market_to_buy</name>
+                <description> Agent goes to market to buy goods.</description>
+                <currentState>start</currentState>
+                <nextState>end</nextState>
+            </function>
+        </functions>
+        </xagent>
+
+</agents>
+</xmodel>

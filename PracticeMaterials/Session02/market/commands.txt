@@ -1,0 +1,41 @@
+# To display the folder I was working. Note that commands are after '$' sign. ->
+Bulent-Ozels-MacBook-Pro:market bulent$ pwd
+/Users/bulent/Documents/Teaching/ABM-RU/market
+
+# To check what files we have.
+Bulent-Ozels-MacBook-Pro:market bulent$ ls
+commands.txt		freemarket.xml		producer_functions.c
+consumer_functions.c	iterations
+
+# Note that there is the model file and .c functions and a folder where we have saved our 0.xml. ->
+Bulent-Ozels-MacBook-Pro:market bulent$ ls ./iterations/
+0.xml
+
+# To compile the model desription, we run the xparser program. It prepares most of things we need. ->
+Bulent-Ozels-MacBook-Pro:market bulent$ ../../../AWorkspace/iceace/xparser-0.17.0/xparser freemarket.xml 
+
+# To see what new files produced:
+Bulent-Ozels-MacBook-Pro:market bulent$ls
+Doxyfile		latex.tex		producer_functions.c
+Makefile		low_primes.h		rules.c
+commands.txt		main.c			stategraph.dot
+consumer_agent_header.h	memory.c		stategraph_colour.dot
+consumer_functions.c	messageboards.c		timing.c
+freemarket.xml		partitioning.c		xml.c
+header.h		process_order_graph.dot
+iterations		producer_agent_header.h
+
+# At that point you may want to visualize the state transition graph eith Graphviz program.
+
+# To compile the .c files with gcc (MinGW and libmboard) in order to generate the executables we run the make command. ->
+Bulent-Ozels-MacBook-Pro:market bulent$ make LIBMBOARD_DIR=../../../AWorkspace/iceace/libmbdir/
+
+# To run the compiled simulator, we run the main program.
+./main 7 ./iterations/0.xml -f 1
+
+# At that point you could see the simulation on the screen and examine changes in memory variables.
+# They are stored under the "iterations" folder. 4.xml, for instance means the state of the agent memory variables
+# at the end of the 4th iteration.
+
+# To clean all additional files that parser and gcc compiler has generated you can use "make" command again. ->
+Bulent-Ozels-MacBook-Pro:market bulent$ make vclean

@@ -1,0 +1,42 @@
+<xmodel "version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://flame.ac.uk/schema/xmml_v2.xsd"">
+
+<!-- Model descriptions  -->    
+<name>model 01</name>
+<version>1</version>
+<description>An example model of reading and writing to memory</description>
+
+<environment>
+    <functionFiles> <!-- List of C files that hold agent functions -->
+        <file>agent_a_functions.c</file>
+    </functionFiles>
+</environment>
+
+<!-- List of agents -->
+<agents>
+
+    <xagent>
+        <name>agent_a</name>
+        <description>An agent that reads and writes to memory</description>
+        <!-- Agent memory holding a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>my_id</name>
+                <description>An integer variable</description>
+            </variable>
+        </memory>
+        <!-- List of agent functions -->
+        <functions>          				
+            <function>
+                <name>function_1</name>
+                <description>Read and write to memory.</description>
+                <currentState>start</currentState>
+                <nextState>end</nextState>		
+            </function>
+        </functions>
+    </xagent>
+
+</agents>
+
+</xmodel>

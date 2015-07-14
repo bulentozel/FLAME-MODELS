@@ -1,0 +1,10 @@
+<states>
+<itno>0</itno>
+<environment>
+</environment>
+<xagent>
+<name>agent_a</name>
+<no_of_acts>0</no_of_acts>
+<day_of_week_to_act>0</day_of_week_to_act>
+</xagent>
+</states>

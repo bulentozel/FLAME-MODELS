@@ -1,0 +1,286 @@
+<xmodel version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://flame.ac.uk/schema/xmml_v2.xsd">
+
+<!-- Model descriptions  -->    
+<name>Free Market</name>
+<version>1</version>
+<description>A simple creditting mechanism.</description>
+
+<environment>
+    <constants>
+        <variable>
+            <type>double</type>
+            <name>debt_threshold</name>
+            <description>A model parameter. Serves as a threshold used by banks at deciding to give credits or not. </description>
+        </variable>
+    </constants>
+    <dataTypes>
+        <dataType>
+            <name>customer</name>
+            <description>It is used by bank agent. It holds firms' loans information.</description>
+            <variables>
+                <variable>
+                    <type>int</type>
+                    <name>firm_id</name>
+                    <description>Id of the customer firm agent.</description>
+                </variable>
+                <variable>
+                    <type>double</type>
+                    <name>request</name>
+                    <description>The amount of loan requested by the firm.</description>
+                </variable>
+                <variable>
+                    <type>double</type>
+                    <name>assets</name>
+                    <description>Total asset of the firm.</description>
+                </variable>
+                <variable>
+                    <type>double</type>
+                    <name>debts</name>
+                    <description>Total of the firm to the bank.</description>
+                </variable>
+            </variables>
+        </dataType>
+    </dataTypes>
+    <functionFiles> <!-- List of C files that hold agent functions -->
+        <file>firm_functions.c</file>
+        <file>bank_functions.c</file>
+    </functionFiles>
+</environment>
+
+<!-- List of agents -->
+<agents>
+
+    <xagent>
+        <name>firm</name>
+        <description>A simple firm agent.</description>
+        <!-- Agent attributes represented by a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>id</name>
+                <constant>true</constant>
+                <description>Identification.</description>
+            </variable>
+            <variable>
+                <type>int</type>
+                <name>bank_id</name>
+                <description>the Id of the firm's bank.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>assets</name>
+                <description>Total assets owned by a firm.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>debts</name>
+                <description>Total debts of a firm.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>equity</name>
+                <description>current equity of a firm.</description>
+            </variable>
+            <variable>
+                <type>int</type>
+                <name>liquidity_need</name>
+                <description>A 0 or 1 value flag memory. 1 means the firm is in short of liquidity.</description>
+            </variable>
+        </memory>
+        <!-- List of agent behaviours represented by functions-->
+        <functions>          				
+            <function>
+                <name>firm_determine_liquidity_need</name>
+                <description>The firm computes its liquidity need.</description>
+                <currentState>start</currentState>
+                <nextState>FirmLoanRequest</nextState>
+            </function>
+            <function>
+                <name>firm_request_loan</name>
+                <description>The firm applies for credit.</description>
+                <currentState>FirmLoanRequest</currentState>
+                <nextState>FirmLoanStatus</nextState>
+                <condition>
+                    <lhs>
+                        <value>a.liquidity_need</value>
+                    </lhs>
+                    <op>EQ</op>
+                    <rhs>
+                        <value>1</value>
+                    </rhs>
+                </condition>
+                <outputs>
+                    <output>
+                        <messageName>loan_request</messageName>
+                    </output>
+                </outputs>
+            </function>
+            <function>
+                <name>idle</name>
+                <description>The firm doesn't need loans.</description>
+                <currentState>FirmLoanRequest</currentState>
+                <nextState>end</nextState>
+                <condition>
+                    <lhs>
+                        <value>a.liquidity_need</value>
+                    </lhs>
+                    <op>NEQ</op>
+                    <rhs>
+                        <value>1</value>
+                    </rhs>
+                </condition>
+            </function>
+            <function>
+                <name>firm_check_loan_status</name>
+                <description>The firm checks result of its loan request.</description>
+                <currentState>FirmLoanStatus</currentState>
+                <nextState>end</nextState>
+                <inputs>
+                    <input>
+                        <messageName>loan_decision</messageName>
+                        <filter>
+                            <!-- checks self id. -->
+                            <lhs><value>a.id</value></lhs>
+                            <op>EQ</op>
+                            <rhs><value>m.firm_id</value></rhs>
+                        </filter>
+                    </input>
+                </inputs>
+            </function>
+        </functions>
+    </xagent>
+
+    <xagent>
+        <name>bank</name>
+        <description>A simple bank agent.</description>
+        <!-- Agent attributes represented by a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>id</name>
+                <constant>true</constant>
+                <description>Used for identification.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>loans</name>
+                <description>Total amount of loans given to firms.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>deposits</name>
+                <description>Total amount of deposits from firms.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>liquidity</name>
+                <description>Total liquidity of a bank.</description>
+            </variable>
+            <variable>
+                <type>int_array</type>
+                <name>id_list</name>
+                <description>Holds firm ids</description>
+            </variable>
+            <variable>
+                <type>customer_array</type>
+                <name>customer_list</name>
+                <description>Holds bank customers.</description>
+            </variable>
+        </memory>
+        <!-- List of agent behaviours -->
+        <functions>
+            <function>
+                <name>bank_collect_loan_requests</name>
+                <description>Bank collects loan requests from the firms.</description>
+                <currentState>start</currentState>
+                <nextState>BankEvaluate</nextState>
+                <inputs>
+                    <input>
+                        <messageName>loan_request</messageName>
+                        <random>true</random>
+                        <filter>
+                            <!-- checks self id. -->
+                            <lhs><value>a.id</value></lhs>
+                            <op>EQ</op>
+                            <rhs><value>m.bank_id</value></rhs>
+                        </filter>
+                    </input>
+                </inputs>
+            </function>
+            <function>
+                <name>bank_evaluate_loan_requests</name>
+                <description>Bank processes loan requests.</description>
+                <currentState>BankEvaluate</currentState>
+                <nextState>BankClear</nextState>
+                <outputs>
+                    <output>
+                        <messageName>loan_decision</messageName>
+                    </output>
+                </outputs>
+            </function>
+            <function>
+                <name>bank_reset_requests</name>
+                <description>Bank clears request list.</description>
+                <currentState>BankClear</currentState>
+                <nextState>end</nextState>
+            </function>
+        </functions>
+    </xagent>
+</agents>
+
+<messages>
+    <message>
+        <name>loan_request</name>
+        <description>The loan requested by a firm.</description>
+        <variables>
+            <variable>
+                <type>int</type>
+                <name>firm_id</name>
+                <description>The firm.</description>
+            </variable>
+            <variable>
+                <type>int</type>
+                <name>bank_id</name>
+                <description>The bank.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>amount</name>
+                <description>The amount.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>assets</name>
+                <description>Total assets of the firm.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>debts</name>
+                <description>Total debts of the firm.</description>
+            </variable>
+        </variables>
+    </message>
+    <message>
+        <name>loan_decision</name>
+        <description>The loan acknowled by a bank.</description>
+        <variables>
+            <variable>
+                <type>int</type>
+                <name>bank_id</name>
+                <description>The firm.</description>
+            </variable>
+            <variable>
+                <type>int</type>
+                <name>firm_id</name>
+                <description>The bank.</description>
+            </variable>
+            <variable>
+                <type>double</type>
+                <name>amount</name>
+                <description>The amount.</description>
+            </variable>
+        </variables>
+    </message>
+</messages>
+</xmodel>

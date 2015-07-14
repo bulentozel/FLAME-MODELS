@@ -1,0 +1,27 @@
+<states>
+<itno>0</itno>
+<agents>
+	<xagent>
+		<name>agent_a</name>
+		<my_id>1</my_id>
+	</xagent>
+	<xagent>
+		<name>agent_a</name>
+		<my_id>2</my_id>
+	</xagent>
+    <xagent>
+		<name>agent_a</name>
+		<my_id>3</my_id>
+	</xagent>
+	<xagent>
+		<name>agent_b</name>
+        <my_id>4</my_id>
+		<sum_of_ids>0</sum_of_ids>
+    </xagent>
+    <xagent>
+        <name>agent_b</name>
+        <my_id>5</my_id>
+        <sum_of_ids>0</sum_of_ids>
+	</xagent>
+</agents>
+</states>

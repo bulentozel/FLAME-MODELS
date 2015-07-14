@@ -1,0 +1,105 @@
+<xmodel version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation='http://flame.ac.uk/schema/xmml_v2.xsd'>
+
+	<!-- Model descriptions  -->
+	<name>model 03</name>
+	<version>1</version>
+	<description>Model with environment constants and user defined data types</description>
+
+	<environment>
+		<constants>
+			<!-- List of simulation constants -->
+			<variable>
+				<type>int</type>
+				<name>env_int</name>
+				<description>An integer that is set at the start of a simulation</description>
+			</variable>
+		</constants>
+		<functionFiles>
+			<!-- List of C files that hold agent functions -->
+			<file>agent_a_functions.c</file>
+		</functionFiles>
+		<dataTypes>
+			<!-- List of user defined data types -->
+			
+			<!-- Datatype position which describes a position in 3D -->
+			<dataType>
+				<name>position</name>
+				<description>position in 3D using doubles</description>
+				<variables>
+					<variable>
+						<type>double</type>
+						<name>x</name>
+						<description>position on x-axis</description>
+					</variable>
+					<variable>
+						<type>double</type>
+						<name>y</name>
+						<description>position on y-axis</description>
+					</variable>
+					<variable>
+						<type>double</type>
+						<name>z</name>
+						<description>position on z-axis</description>
+					</variable>
+				</variables>
+			</dataType>
+
+			<!-- Datatype line which is defined by two positions in 3D -->
+			<dataType>
+				<name>line</name>
+				<description>a line defined by two points</description>
+				<variables>
+					<variable>
+						<type>position</type>
+						<name>start</name>
+						<description>start position of the line</description>
+					</variable>
+					<variable>
+						<type>position</type>
+						<name>end</name>
+						<description>end position of the line</description>
+					</variable>
+				</variables>
+			</dataType>
+		</dataTypes>
+	</environment>
+
+	<!-- List of agents -->
+	<agents>
+
+		<xagent>
+			<name>agent_a</name>
+			<description></description>
+			<!-- Agent memory holding a list of variables -->
+			<memory>
+				<variable>
+					<type>line</type>
+					<name>my_line</name>
+					<description>A line in 3D</description>
+				</variable>
+                <variable>
+                    <type>int</type>
+                    <name>my_id</name>
+                    <description>An agnet ID</description>
+                </variable>
+			</memory>
+			<!-- List of agent functions -->
+			<functions>
+				<function>
+					<name>function_a_1</name>
+					<description>Reads and writes a line from memory</description>
+					<currentState>start</currentState>
+					<nextState>1</nextState>
+				</function>
+                <function>
+                    <name>function_a_2</name>
+                    <description>Declares self ID</description>
+                    <currentState>1</currentState>
+                    <nextState>end</nextState>
+                    </function>
+			</functions>
+		</xagent>
+
+	</agents>
+</xmodel>

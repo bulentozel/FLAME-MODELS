@@ -1,0 +1,19 @@
+model_
+
+01
+	* An agent reads and writes to memory
+
+02
+	* An agent sends a message to another type of agent
+
+03
+	* A model with environment constants and user defined data types
+
+04
+	* A model with time units and agent function conditions
+
+05
+	* An agent that uses message input filter, sort, and randomisation
+
+06
+	* A model that includes sub models

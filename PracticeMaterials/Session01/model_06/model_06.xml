@@ -1,0 +1,47 @@
+<xmodel version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation='http://flame.ac.uk/schema/xmml_v2.xsd'>
+
+<!-- Model descriptions  -->    
+<name>model 06</name>
+<version>1</version>
+<description>Model that includes sub models</description>
+
+<models> <!-- List of models to include with this model -->
+	<model><file>sub_model_depth_1a.xml</file><enabled>true</enabled></model>
+	<model><file>sub_model_depth_1b.xml</file><enabled>false</enabled></model>
+</models>
+
+<environment>
+    <functionFiles> <!-- List of C files that hold agent functions -->
+        <file>agent_a_functions_0.c</file>
+    </functionFiles>
+</environment>
+
+<!-- List of agents -->
+<agents>
+
+    <xagent>
+        <name>agent_a</name>
+        <description>Agent of type a</description>
+        <!-- Agent memory holding a list of variables -->
+        <memory>
+            <variable>
+                <type>int</type>
+                <name>id</name>
+                <description>Identification</description>
+            </variable>
+        </memory>
+        <!-- List of agent functions -->
+        <functions>          				
+            <function>
+                <name>from_model_06</name>
+                <description>A function defined in model_06.xml</description>
+                <currentState>start</currentState>
+                <nextState>01</nextState>		
+            </function>
+        </functions>
+    </xagent>
+
+</agents>
+
+</xmodel>

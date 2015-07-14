@@ -1,0 +1,298 @@
+[libmboard] Version        : 0.3.0 (SERIAL)
+[libmboard] Build date     : Wed Apr  3 07:00:00 EEST 2013
+[libmboard] Config options :  '--prefix=/Users/bulent/Documents/workspace/iceace/libmbdir' '--disable-parallel' '--disable-tests'
+
+[libmboard] +++ This is a DEBUG version +++
+[libmboard] <settings> MBOARD_MEMPOOL_RECYCLE = 0 (default)
+[libmboard] <settings> MBOARD_MEMPOOL_BLOCKSIZE = 512 (default)
+FLAME Application: Free Market 
+Debug mode enabled 
+Iterations: 10
+Using output frequency of: 2
+xml: Geometric partitioning
+Reading initial data file: ./iterations/0.xml
+Reading environment data from: ./iterations/0.xml
+Reading agent data from: ./iterations/0.xml
+output: type='snapshot' format='xml' location='./iterations/' period='1' phase='0'
+xdiv=0 ydiv=1
+Iteration - 1
+Firm ID = 3, Liquidity Need = 0 
+Firm ID = 12, Liquidity Need = 1 
+Firm ID = 7, Liquidity Need = 1 
+Firm ID = 5, Liquidity Need = 1 
+Firm ID = 6, Liquidity Need = 0 
+Firm ID = 10, Liquidity Need = 1 
+Firm ID = 10, Loan Request = 21 
+Firm ID = 5, Loan Request = 93 
+Firm ID = 7, Loan Request = 57 
+Firm ID = 12, Loan Request = 47 
+Bank ID = 1 has recieved 5 loan requests. 
+Bank ID = 2 has recieved 10 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Firm ID = 12 is bankrupt and is removed from the economy!!! 
+Firm ID = 7 has gotten 57.000000 amount of loan from Bank ID = 2 
+Firm ID = 5 is bankrupt and is removed from the economy!!! 
+Firm ID = 10 is bankrupt and is removed from the economy!!! 
+Iteration - 2
+Firm ID = 6, Liquidity Need = 0 
+Firm ID = 3, Liquidity Need = 1 
+Firm ID = 7, Liquidity Need = 0 
+Firm ID = 3, Loan Request = 33 
+Bank ID = 1 has recieved 6 loan requests. 
+Bank ID = 2 has recieved 10 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Firm ID = 3 has gotten 33.000000 amount of loan from Bank ID = 1 
+Iteration - 3
+Firm ID = 7, Liquidity Need = 0 
+Firm ID = 6, Liquidity Need = 1 
+Firm ID = 3, Liquidity Need = 0 
+Firm ID = 6, Loan Request = 81 
+Bank ID = 1 has recieved 7 loan requests. 
+Bank ID = 2 has recieved 10 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Firm ID = 6 is bankrupt and is removed from the economy!!! 
+Iteration - 4
+Firm ID = 3, Liquidity Need = 1 
+Firm ID = 7, Liquidity Need = 1 
+Firm ID = 7, Loan Request = 39 
+Firm ID = 3, Loan Request = 63 
+Bank ID = 1 has recieved 8 loan requests. 
+Bank ID = 2 has recieved 11 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 39.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has rejected loan request Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Firm ID = 3 is bankrupt and is removed from the economy!!! 
+Firm ID = 7 has gotten 39.000000 amount of loan from Bank ID = 2 
+Iteration - 5
+Firm ID = 7, Liquidity Need = 1 
+Firm ID = 7, Loan Request = 50 
+Bank ID = 1 has recieved 8 loan requests. 
+Bank ID = 2 has recieved 12 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 39.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 50.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has rejected loan request Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Firm ID = 7 has gotten 50.000000 amount of loan from Bank ID = 2 
+Iteration - 6
+Firm ID = 7, Liquidity Need = 0 
+Bank ID = 1 has recieved 8 loan requests. 
+Bank ID = 2 has recieved 12 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 39.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 50.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has rejected loan request Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Iteration - 7
+Firm ID = 7, Liquidity Need = 0 
+Bank ID = 1 has recieved 8 loan requests. 
+Bank ID = 2 has recieved 12 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 39.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 50.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has rejected loan request Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Iteration - 8
+Firm ID = 7, Liquidity Need = 1 
+Firm ID = 7, Loan Request = 78 
+Bank ID = 1 has recieved 8 loan requests. 
+Bank ID = 2 has recieved 13 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 39.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 50.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 78.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has rejected loan request Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Firm ID = 7 has gotten 78.000000 amount of loan from Bank ID = 2 
+Iteration - 9
+Firm ID = 7, Liquidity Need = 0 
+Bank ID = 1 has recieved 8 loan requests. 
+Bank ID = 2 has recieved 13 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 39.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 50.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 78.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has rejected loan request Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Iteration - 10
+Firm ID = 7, Liquidity Need = 0 
+Bank ID = 1 has recieved 8 loan requests. 
+Bank ID = 2 has recieved 13 loan requests. 
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has given out 93.000000 amount of loan to Firm ID = 10
+Bank ID = 2 has rejected loan request Firm ID = 11
+Bank ID = 2 has rejected loan request Firm ID = 8
+Bank ID = 2 has given out 13.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has rejected loan request Firm ID = 9
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 12
+Bank ID = 2 has rejected loan request Firm ID = 10
+Bank ID = 2 has given out 57.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 39.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 50.000000 amount of loan to Firm ID = 7
+Bank ID = 2 has given out 78.000000 amount of loan to Firm ID = 7
+Bank ID = 1 has given out 66.000000 amount of loan to Firm ID = 4
+Bank ID = 1 has given out 41.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 4
+Bank ID = 1 has given out 79.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 5
+Bank ID = 1 has given out 33.000000 amount of loan to Firm ID = 3
+Bank ID = 1 has rejected loan request Firm ID = 6
+Bank ID = 1 has rejected loan request Firm ID = 3
+Bank ID = 1 has finished loan request processing.
+Bank ID = 2 has finished loan request processing.
+Execution time - 0:00:008 [mins:secs:msecs]
